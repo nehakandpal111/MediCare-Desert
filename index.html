@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Desert - Advanced Telemedicine Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <!-- Weather Sidebar -->
+    <div id="weather-sidebar" class="weather-sidebar">
+        <div class="weather-header">
+            <h3>🌡️ Desert Health</h3>
+            <button id="close-sidebar" class="close-btn">&times;</button>
+        </div>
+        <div class="weather-content">
+            <div class="weather-info">
+                <div class="temperature">42°C</div>
+                <div class="condition">Hot & Dry</div>
+                <div class="humidity">Humidity: 15%</div>
+            </div>
+            <div class="health-alerts">
+                <div class="alert high-risk">
+                    <span class="alert-icon">⚠️</span>
+                    <div>
+                        <strong>Extreme Heat Warning</strong>
+                        <p>High risk of heat exhaustion</p>
+                    </div>
+                </div>
+            </div>
+            <div class="desert-remedies">
+                <h4>🏜️ Desert Survival Tips</h4>
+                <div class="remedy-cards">
+                    <div class="remedy-card">
+                        <span class="remedy-icon">💧</span>
+                        <h5>Water Conservation</h5>
+                        <p>Sip small amounts frequently. Use wet cloth on pulse points.</p>
+                    </div>
+                    <div class="remedy-card">
+                        <span class="remedy-icon">🌿</span>
+                        <h5>Natural Cooling</h5>
+                        <p>Aloe vera gel for skin cooling. Mint tea for internal cooling.</p>
+                    </div>
+                    <div class="remedy-card">
+                        <span class="remedy-icon">🧂</span>
+                        <h5>Electrolyte Balance</h5>
+                        <p>Pinch of salt in water. Eat dates for natural electrolytes.</p>
+                    </div>
+                    <div class="remedy-card">
+                        <span class="remedy-icon">☂️</span>
+                        <h5>Heat Protection</h5>
+                        <p>Stay in shade 10AM-4PM. Light colored loose clothing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="app-logo">🏥</div>
+                    <div class="app-title">
+                        <h1>MediCare Desert</h1>
+                        <p>Advanced Telemedicine Assistant</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button id="weather-toggle" class="weather-btn">
+                        <span class="weather-icon">🌡️</span>
+                        <span class="temp-display">42°C</span>
+                    </button>
+                    <button id="emergency-btn" class="emergency-btn">🚨 Emergency</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Welcome Screen -->
+        <section id="welcome-screen" class="screen active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-animation">
+                        <div class="pulse-circle"></div>
+                        <div class="medical-icon">⚕️</div>
+                    </div>
+                    <h2>Advanced Health Assessment</h2>
+                    <p class="hero-subtitle">AI-powered symptom analysis designed for desert regions</p>
+                    <div class="feature-highlights">
+                        <div class="feature">
+                            <span class="feature-icon">📸</span>
+                            <span>Photo Analysis</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🌡️</span>
+                            <span>Climate Aware</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">💧</span>
+                            <span>Water Conservation</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🏠</span>
+                            <span>Home Remedies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-cards">
+                <div class="action-card primary" id="start-assessment">
+                    <div class="card-icon">🔍</div>
+                    <h3>Start Health Assessment</h3>
+                    <p>Comprehensive symptom analysis with photo support</p>
+                    <div class="card-arrow">→</div>
+                </div>
+                
+                <div class="action-card secondary" id="photo-analysis">
+                    <div class="card-icon">📸</div>
+                    <h3>Photo Analysis</h3>
+                    <p>Analyze wounds, rashes, or visible symptoms</p>
+                    <div class="card-arrow">→</div>
+                </div>
+                
+                <div class="action-card secondary" id="home-remedies">
+                    <div class="card-icon">🌿</div>
+                    <h3>Home Remedies</h3>
+                    <p>Desert-specific natural treatments</p>
+                    <div class="card-arrow">→</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessment Type Selection -->
+        <section id="assessment-type-screen" class="screen">
+            <div class="screen-header">
+                <h2>Choose Assessment Type</h2>
+                <p>Select the most appropriate method for your condition</p>
+            </div>
+            
+            <div class="assessment-options">
+                <div class="assessment-card" data-type="symptoms">
+                    <div class="assessment-icon">🩺</div>
+                    <h3>Symptom Checker</h3>
+                    <p>Answer questions about your symptoms</p>
+                    <ul class="assessment-features">
+                        <li>✓ Interactive questionnaire</li>
+                        <li>✓ AI-powered analysis</li>
+                        <li>✓ Personalized recommendations</li>
+                    </ul>
+                </div>
+                
+                <div class="assessment-card" data-type="photo">
+                    <div class="assessment-icon">📷</div>
+                    <h3>Photo Analysis</h3>
+                    <p>Take or upload photos of visible conditions</p>
+                    <ul class="assessment-features">
+                        <li>✓ Wound assessment</li>
+                        <li>✓ Skin condition analysis</li>
+                        <li>✓ Visual comparison guides</li>
+                    </ul>
+                </div>
+                
+                <div class="assessment-card" data-type="emergency">
+                    <div class="assessment-icon">🚨</div>
+                    <h3>Emergency Guide</h3>
+                    <p>Immediate first aid for urgent situations</p>
+                    <ul class="assessment-features">
+                        <li>✓ Step-by-step instructions</li>
+                        <li>✓ Emergency contacts</li>
+                        <li>✓ Critical care tips</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button id="back-to-welcome" class="btn btn-secondary">← Back</button>
+            </div>
+        </section>
+
+        <!-- Photo Analysis Screen -->
+        <section id="photo-analysis-screen" class="screen">
+            <div class="screen-header">
+                <h2>Photo Analysis</h2>
+                <p>Take or upload a photo for visual assessment</p>
+            </div>
+            
+            <div class="photo-section">
+                <div class="camera-container">
+                    <video id="camera-feed" class="camera-feed" autoplay playsinline></video>
+                    <canvas id="photo-canvas" class="photo-canvas"></canvas>
+                    <div class="camera-overlay">
+                        <div class="focus-frame"></div>
+                        <div class="camera-instructions">
+                            <p>Position the affected area within the frame</p>
+                            <p>Ensure good lighting for best results</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="camera-controls">
+                    <button id="start-camera" class="btn btn-primary">📷 Start Camera</button>
+                    <button id="take-photo" class="btn btn-success" style="display: none;">📸 Capture</button>
+                    <button id="retake-photo" class="btn btn-secondary" style="display: none;">🔄 Retake</button>
+                    <input type="file" id="upload-photo" accept="image/*" style="display: none;">
+                    <button id="upload-btn" class="btn btn-secondary">📁 Upload Photo</button>
+                </div>
+                
+                <div id="photo-result" class="photo-result" style="display: none;">
+                    <img id="captured-image" class="captured-image" alt="Captured photo">
+                    <div class="analysis-panel">
+                        <h3>Visual Analysis</h3>
+                        <div id="photo-analysis-result" class="analysis-result">
+                            <!-- Analysis results will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reference-images">
+                <h3>Reference Guide</h3>
+                <div class="reference-grid">
+                    <div class="reference-item">
+                        <div class="reference-image minor-cut"></div>
+                        <h4>Minor Cut</h4>
+                        <p>Small, shallow cuts with minimal bleeding</p>
+                    </div>
+                    <div class="reference-item">
+                        <div class="reference-image deep-wound"></div>
+                        <h4>Deep Wound</h4>
+                        <p>Requires immediate medical attention</p>
+                    </div>
+                    <div class="reference-item">
+                        <div class="reference-image burn"></div>
+                        <h4>Burn</h4>
+                        <p>Heat or chemical damage to skin</p>
+                    </div>
+                    <div class="reference-item">
+                        <div class="reference-image rash"></div>
+                        <h4>Skin Rash</h4>
+                        <p>Irritation or allergic reaction</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button id="back-to-assessment-type" class="btn btn-secondary">← Back</button>
+                <button id="analyze-photo" class="btn btn-primary" style="display: none;">Analyze Photo</button>
+            </div>
+        </section>
+
+        <!-- Enhanced Symptom Selection -->
+        <section id="symptom-screen" class="screen">
+            <div class="screen-header">
+                <h2>Symptom Assessment</h2>
+                <p>Select your primary concern from the categories below</p>
+            </div>
+            
+            <div class="symptom-categories">
+                <div class="category-section">
+                    <h3>🌡️ Heat-Related Conditions</h3>
+                    <div class="symptom-grid">
+                        <div class="symptom-card enhanced" data-symptom="heat-exhaustion">
+                            <div class="symptom-icon">🥵</div>
+                            <h4>Heat Exhaustion</h4>
+                            <p>Excessive sweating, weakness, nausea</p>
+                            <div class="urgency-indicator moderate">Moderate</div>
+                        </div>
+                        <div class="symptom-card enhanced" data-symptom="dehydration">
+                            <div class="symptom-icon">💧</div>
+                            <h4>Dehydration</h4>
+                            <p>Thirst, dry mouth, fatigue, dizziness</p>
+                            <div class="urgency-indicator high">High Risk</div>
+                        </div>
+                        <div class="symptom-card enhanced" data-symptom="heat-stroke">
+                            <div class="symptom-icon">🔥</div>
+                            <h4>Heat Stroke</h4>
+                            <p>High fever, confusion, hot dry skin</p>
+                            <div class="urgency-indicator emergency">Emergency</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-section">
+                    <h3>🩹 Injuries & Wounds</h3>
+                    <div class="symptom-grid">
+                        <div class="symptom-card enhanced" data-symptom="cuts">
+                            <div class="symptom-icon">🩹</div>
+                            <h4>Cuts & Wounds</h4>
+                            <p>Bleeding, lacerations, punctures</p>
+                            <div class="urgency-indicator moderate">Variable</div>
+                        </div>
+                        <div class="symptom-card enhanced" data-symptom="burns">
+                            <div class="symptom-icon">🔥</div>
+                            <h4>Burns</h4>
+                            <p>Heat, chemical, or sun burns</p>
+                            <div class="urgency-indicator high">High Risk</div>
+                        </div>
+                        <div class="symptom-card enhanced" data-symptom="fractures">
+                            <div class="symptom-icon">🦴</div>
+                            <h4>Fractures</h4>
+                            <p>Broken bones, severe pain</p>
+                            <div class="urgency-indicator emergency">Emergency</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-section">
+                    <h3>🫁 Respiratory Issues</h3>
+                    <div class="symptom-grid">
+                        <div class="symptom-card enhanced" data-symptom="breathing">
+                            <div class="symptom-icon">🫁</div>
+                            <h4>Breathing Problems</h4>
+                            <p>Shortness of breath, wheezing</p>
+                            <div class="urgency-indicator high">High Risk</div>
+                        </div>
+                        <div class="symptom-card enhanced" data-symptom="dust-inhalation">
+                            <div class="symptom-icon">🌪️</div>
+                            <h4>Dust Inhalation</h4>
+                            <p>Coughing, throat irritation</p>
+                            <div class="urgency-indicator moderate">Moderate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button id="back-to-assessment-type-2" class="btn btn-secondary">← Back</button>
+            </div>
+        </section>
+
+        <!-- Enhanced Follow-up Questions -->
+        <section id="followup-screen" class="screen">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+                <div class="progress-text">Question <span id="current-question">1</span> of <span id="total-questions">5</span></div>
+            </div>
+            
+            <div class="question-container">
+                <div class="question-header">
+                    <h2 id="followup-title">Assessment Questions</h2>
+                    <p id="followup-subtitle">Help us understand your condition better</p>
+                </div>
+                
+                <div id="followup-content" class="followup-content">
+                    <!-- Dynamic content will be populated here -->
+                </div>
+                
+                <div class="question-navigation">
+                    <button id="prev-question" class="btn btn-secondary" style="display: none;">← Previous</button>
+                    <button id="next-question" class="btn btn-primary">Next →</button>
+                    <button id="get-results" class="btn btn-success" style="display: none;">Get Results</button>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button id="back-to-symptoms" class="btn btn-secondary">← Back to Symptoms</button>
+            </div>
+        </section>
+
+        <!-- Enhanced Results Screen -->
+        <section id="results-screen" class="screen">
+            <div class="results-header">
+                <div id="urgency-badge" class="urgency-badge">
+                    <span id="urgency-level">Assessment Complete</span>
+                </div>
+                <h2>Your Health Assessment</h2>
+            </div>
+            
+            <div class="results-dashboard">
+                <div class="result-card primary-advice">
+                    <div class="card-header">
+                        <h3>🎯 Immediate Actions</h3>
+                        <div class="priority-indicator" id="priority-indicator">High Priority</div>
+                    </div>
+                    <div id="advice-content" class="card-content">
+                        <!-- Advice content will be populated here -->
+                    </div>
+                </div>
+                
+                <div class="result-card first-aid">
+                    <div class="card-header">
+                        <h3>🏥 First Aid Steps</h3>
+                    </div>
+                    <div id="first-aid-content" class="card-content">
+                        <!-- First aid content will be populated here -->
+                    </div>
+                </div>
+                
+                <div class="result-card home-remedies">
+                    <div class="card-header">
+                        <h3>🌿 Desert Home Remedies</h3>
+                        <div class="water-conservation-badge">💧 Water-Conscious</div>
+                    </div>
+                    <div id="home-remedies-content" class="card-content">
+                        <!-- Home remedies content will be populated here -->
+                    </div>
+                </div>
+                
+                <div class="result-card providers">
+                    <div class="card-header">
+                        <h3>📍 Healthcare Providers</h3>
+                        <button id="find-nearest" class="btn btn-small">📍 Find Nearest</button>
+                    </div>
+                    <div id="providers-content" class="card-content">
+                        <!-- Providers content will be populated here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="save-assessment" class="btn btn-secondary">💾 Save Assessment</button>
+                <button id="share-results" class="btn btn-secondary">📤 Share Results</button>
+                <button id="start-new-assessment" class="btn btn-primary">🔄 New Assessment</button>
+            </div>
+        </section>
+
+        <!-- Home Remedies Screen -->
+        <section id="home-remedies-screen" class="screen">
+            <div class="screen-header">
+                <h2>🌿 Desert Home Remedies</h2>
+                <p>Natural treatments using minimal water resources</p>
+            </div>
+            
+            <div class="remedies-categories">
+                <div class="remedy-category">
+                    <h3>🌡️ Heat-Related Conditions</h3>
+                    <div class="remedy-cards">
+                        <div class="remedy-card detailed">
+                            <div class="remedy-header">
+                                <span class="remedy-icon">🧊</span>
+                                <h4>Cooling Techniques</h4>
+                                <div class="water-usage low">Low Water</div>
+                            </div>
+                            <div class="remedy-content">
+                                <p><strong>Method:</strong> Wet a small cloth and place on pulse points (wrists, neck, temples)</p>
+                                <p><strong>Duration:</strong> 10-15 minutes</p>
+                                <p><strong>Water needed:</strong> 50ml</p>
+                                <div class="effectiveness-bar">
+                                    <div class="effectiveness-fill" style="width: 85%"></div>
+                                    <span>85% effective</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="remedy-card detailed">
+                            <div class="remedy-header">
+                                <span class="remedy-icon">🌿</span>
+                                <h4>Aloe Vera Treatment</h4>
+                                <div class="water-usage none">No Water</div>
+                            </div>
+                            <div class="remedy-content">
+                                <p><strong>Method:</strong> Apply fresh aloe vera gel to affected skin</p>
+                                <p><strong>Duration:</strong> Leave on for 20 minutes</p>
+                                <p><strong>Benefits:</strong> Cooling, anti-inflammatory</p>
+                                <div class="effectiveness-bar">
+                                    <div class="effectiveness-fill" style="width: 90%"></div>
+                                    <span>90% effective</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="remedy-category">
+                    <h3>🩹 Wound Care</h3>
+                    <div class="remedy-cards">
+                        <div class="remedy-card detailed">
+                            <div class="remedy-header">
+                                <span class="remedy-icon">🍯</span>
+                                <h4>Honey Dressing</h4>
+                                <div class="water-usage minimal">Minimal Water</div>
+                            </div>
+                            <div class="remedy-content">
+                                <p><strong>Method:</strong> Clean wound with minimal water, apply thin layer of honey</p>
+                                <p><strong>Benefits:</strong> Antibacterial, promotes healing</p>
+                                <p><strong>Change:</strong> Every 12 hours</p>
+                                <div class="effectiveness-bar">
+                                    <div class="effectiveness-fill" style="width: 80%"></div>
+                                    <span>80% effective</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="remedy-category">
+                    <h3>💧 Hydration Solutions</h3>
+                    <div class="remedy-cards">
+                        <div class="remedy-card detailed">
+                            <div class="remedy-header">
+                                <span class="remedy-icon">🧂</span>
+                                <h4>Electrolyte Solution</h4>
+                                <div class="water-usage moderate">Moderate Water</div>
+                            </div>
+                            <div class="remedy-content">
+                                <p><strong>Recipe:</strong> 1/4 tsp salt + 2 tbsp sugar in 250ml water</p>
+                                <p><strong>Usage:</strong> Sip slowly over 30 minutes</p>
+                                <p><strong>Effect:</strong> Rapid rehydration</p>
+                                <div class="effectiveness-bar">
+                                    <div class="effectiveness-fill" style="width: 95%"></div>
+                                    <span>95% effective</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <button id="back-to-welcome-from-remedies" class="btn btn-secondary">← Back</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Emergency Modal -->
+    <div id="emergency-modal" class="modal">
+        <div class="modal-content emergency">
+            <div class="modal-header">
+                <h2>🚨 Emergency Protocols</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="emergency-contacts">
+                    <h3>Emergency Contacts</h3>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <span class="contact-icon">🚑</span>
+                            <div>
+                                <strong>Emergency Services</strong>
+                                <p>Call: 911 or local emergency number</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🏥</span>
+                            <div>
+                                <strong>Nearest Hospital</strong>
+                                <p>Desert Regional Medical Center</p>
+                                <p>📞 (555) 123-4567</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="emergency-steps">
+                    <h3>Immediate Actions</h3>
+                    <ol class="emergency-list">
+                        <li>Ensure scene safety</li>
+                        <li>Check for responsiveness</li>
+                        <li>Call for help immediately</li>
+                        <li>Provide basic first aid if trained</li>
+                        <li>Stay with the person until help arrives</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

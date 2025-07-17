@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Desert Regional Medical Center",
+    "type": "Hospital",
+    "phone": "(555) 123-4567",
+    "address": "123 Medical Plaza, Desert City",
+    "services": ["Emergency Care", "Surgery", "Specialized Medicine", "Maternity"],
+    "hours": "24/7",
+    "acceptsInsurance": true,
+    "specialties": ["Heat-related illnesses", "Trauma care", "Dehydration treatment"]
+  },
+  {
+    "id": 2,
+    "name": "Oasis Emergency Room",
+    "type": "Emergency Room",
+    "phone": "(555) 911-0000",
+    "address": "456 Emergency Blvd, Desert City",
+    "services": ["Emergency Medicine", "Trauma Care", "Critical Care"],
+    "hours": "24/7",
+    "acceptsInsurance": true,
+    "specialties": ["Heat stroke treatment", "Severe dehydration", "Emergency surgery"]
+  },
+  {
+    "id": 3,
+    "name": "Desert Urgent Care",
+    "type": "Urgent Care",
+    "phone": "(555) 234-5678",
+    "address": "789 Quick Street, Desert City",
+    "services": ["Urgent Care", "Minor Injuries", "X-rays", "Lab Tests"],
+    "hours": "Daily 6AM-10PM",
+    "acceptsInsurance": true,
+    "specialties": ["Heat exhaustion", "Minor burns", "Wound care"]
+  },
+  {
+    "id": 4,
+    "name": "Community Health Clinic",
+    "type": "Clinic",
+    "phone": "(555) 345-6789",
+    "address": "321 Community Way, Desert City",
+    "services": ["General Medicine", "Preventive Care", "Chronic Disease Management"],
+    "hours": "Mon-Fri 8AM-6PM, Sat 9AM-2PM",
+    "acceptsInsurance": true,
+    "specialties": ["Primary care", "Health screenings", "Medication management"]
+  },
+  {
+    "id": 5,
+    "name": "Mobile Desert Health Unit",
+    "type": "Mobile Clinic",
+    "phone": "(555) 456-7890",
+    "address": "Various locations - call for schedule",
+    "services": ["Basic Health Services", "Vaccinations", "Health Education", "First Aid"],
+    "hours": "Schedule varies by location",
+    "acceptsInsurance": false,
+    "specialties": ["Remote area care", "Basic emergency care", "Health education"]
+  },
+  {
+    "id": 6,
+    "name": "Sunrise Family Practice",
+    "type": "Clinic",
+    "phone": "(555) 567-8901",
+    "address": "654 Family Drive, Desert City",
+    "services": ["Family Medicine", "Pediatrics", "Women's Health"],
+    "hours": "Mon-Fri 9AM-5PM",
+    "acceptsInsurance": true,
+    "specialties": ["Family care", "Child health", "Preventive medicine"]
+  },
+  {
+    "id": 7,
+    "name": "Desert Telemedicine Center",
+    "type": "Telemedicine",
+    "phone": "(555) 678-9012",
+    "address": "Online consultations available",
+    "services": ["Virtual Consultations", "Remote Monitoring", "Prescription Management"],
+    "hours": "24/7 online availability",
+    "acceptsInsurance": true,
+    "specialties": ["Remote consultations", "Follow-up care", "Chronic disease monitoring"]
+  },
+  {
+    "id": 8,
+    "name": "Cactus Wellness Center",
+    "type": "Clinic",
+    "phone": "(555) 789-0123",
+    "address": "987 Wellness Blvd, Desert City",
+    "services": ["Integrative Medicine", "Nutrition Counseling", "Mental Health"],
+    "hours": "Mon-Sat 8AM-6PM",
+    "acceptsInsurance": true,
+    "specialties": ["Holistic care", "Nutrition therapy", "Stress management"]
+  },
+  {
+    "id": 9,
+    "name": "Emergency Response Team",
+    "type": "Emergency Services",
+    "phone": "911",
+    "address": "Citywide emergency response",
+    "services": ["Emergency Response", "Ambulance Services", "Life Support"],
+    "hours": "24/7",
+    "acceptsInsurance": true,
+    "specialties": ["Emergency transport", "Life-saving interventions", "Crisis response"]
+  },
+  {
+    "id": 10,
+    "name": "Desert Pharmacy & Clinic",
+    "type": "Pharmacy",
+    "phone": "(555) 890-1234",
+    "address": "147 Pharmacy Lane, Desert City",
+    "services": ["Prescription Services", "Basic Health Screenings", "Medication Counseling"],
+    "hours": "Mon-Sat 8AM-8PM, Sun 10AM-6PM",
+    "acceptsInsurance": true,
+    "specialties": ["Medication management", "Health screenings", "Immunizations"]
+  }
+]
